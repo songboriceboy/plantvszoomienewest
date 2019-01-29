@@ -15,6 +15,8 @@ class WallNut(pygame.sprite.Sprite):
 
     def update(self, *args):
         for zoobie in self.zombies:
+            if not zoobie.isAlive:
+                continue
             self.energy -= 1
             if self.energy <= 0:
                 for zoobie in self.zombies:

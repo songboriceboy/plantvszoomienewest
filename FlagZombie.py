@@ -18,6 +18,7 @@ class FlagZombie(pygame.sprite.Sprite):
         self.energy = 6
         self.dietimes = 0
         self.isMeetWallNut = False  # 僵尸是否遇到了坚果
+        self.isAlive = True
 
     def update(self, *args):
         if self.energy > 0:
@@ -33,6 +34,7 @@ class FlagZombie(pygame.sprite.Sprite):
                 if self.dietimes > 24:
                     self.kill()
                 else:
+                    self.isAlive = False
                     self.dietimes += 1
             else:
                 self.image = self.dieimages[self.dietimes]

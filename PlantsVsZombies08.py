@@ -172,6 +172,7 @@ while True:
     # 2.坚果要掉血（n个僵尸同时吃，要掉n个血）
     # 3.坚果血没后，要kill掉自己
     # 4.坚果吃完后，僵尸要继续向前走
+    # 5.僵尸死后，坚果的僵尸集合中要移除该僵尸
     for zombie in zombieList:
         for wallNut in wallNutList:
             if pygame.sprite.collide_mask(zombie, wallNut):
